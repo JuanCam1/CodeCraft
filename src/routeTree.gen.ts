@@ -13,9 +13,8 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as CategoriesIndexImport } from './routes/categories/index'
-import { Route as ReactHooksImport } from './routes/react/hooks'
-import { Route as CategoriesCategoryIdImport } from './routes/categories/$categoryId'
-import { Route as CategoriesArticlesIndexImport } from './routes/categories/articles/index'
+import { Route as CategoriesCategorySlugImport } from './routes/categories/$categorySlug'
+import { Route as ArticleFrontendReactHooksImport } from './routes/article/frontend/react/hooks'
 
 // Create/Update Routes
 
@@ -31,21 +30,15 @@ const CategoriesIndexRoute = CategoriesIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ReactHooksRoute = ReactHooksImport.update({
-  id: '/react/hooks',
-  path: '/react/hooks',
+const CategoriesCategorySlugRoute = CategoriesCategorySlugImport.update({
+  id: '/categories/$categorySlug',
+  path: '/categories/$categorySlug',
   getParentRoute: () => rootRoute,
 } as any)
 
-const CategoriesCategoryIdRoute = CategoriesCategoryIdImport.update({
-  id: '/categories/$categoryId',
-  path: '/categories/$categoryId',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const CategoriesArticlesIndexRoute = CategoriesArticlesIndexImport.update({
-  id: '/categories/articles/',
-  path: '/categories/articles/',
+const ArticleFrontendReactHooksRoute = ArticleFrontendReactHooksImport.update({
+  id: '/article/frontend/react/hooks',
+  path: '/article/frontend/react/hooks',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,18 +53,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/categories/$categoryId': {
-      id: '/categories/$categoryId'
-      path: '/categories/$categoryId'
-      fullPath: '/categories/$categoryId'
-      preLoaderRoute: typeof CategoriesCategoryIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/react/hooks': {
-      id: '/react/hooks'
-      path: '/react/hooks'
-      fullPath: '/react/hooks'
-      preLoaderRoute: typeof ReactHooksImport
+    '/categories/$categorySlug': {
+      id: '/categories/$categorySlug'
+      path: '/categories/$categorySlug'
+      fullPath: '/categories/$categorySlug'
+      preLoaderRoute: typeof CategoriesCategorySlugImport
       parentRoute: typeof rootRoute
     }
     '/categories/': {
@@ -81,11 +67,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoriesIndexImport
       parentRoute: typeof rootRoute
     }
-    '/categories/articles/': {
-      id: '/categories/articles/'
-      path: '/categories/articles'
-      fullPath: '/categories/articles'
-      preLoaderRoute: typeof CategoriesArticlesIndexImport
+    '/article/frontend/react/hooks': {
+      id: '/article/frontend/react/hooks'
+      path: '/article/frontend/react/hooks'
+      fullPath: '/article/frontend/react/hooks'
+      preLoaderRoute: typeof ArticleFrontendReactHooksImport
       parentRoute: typeof rootRoute
     }
   }
@@ -95,68 +81,60 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/categories/$categoryId': typeof CategoriesCategoryIdRoute
-  '/react/hooks': typeof ReactHooksRoute
+  '/categories/$categorySlug': typeof CategoriesCategorySlugRoute
   '/categories': typeof CategoriesIndexRoute
-  '/categories/articles': typeof CategoriesArticlesIndexRoute
+  '/article/frontend/react/hooks': typeof ArticleFrontendReactHooksRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/categories/$categoryId': typeof CategoriesCategoryIdRoute
-  '/react/hooks': typeof ReactHooksRoute
+  '/categories/$categorySlug': typeof CategoriesCategorySlugRoute
   '/categories': typeof CategoriesIndexRoute
-  '/categories/articles': typeof CategoriesArticlesIndexRoute
+  '/article/frontend/react/hooks': typeof ArticleFrontendReactHooksRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/categories/$categoryId': typeof CategoriesCategoryIdRoute
-  '/react/hooks': typeof ReactHooksRoute
+  '/categories/$categorySlug': typeof CategoriesCategorySlugRoute
   '/categories/': typeof CategoriesIndexRoute
-  '/categories/articles/': typeof CategoriesArticlesIndexRoute
+  '/article/frontend/react/hooks': typeof ArticleFrontendReactHooksRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/categories/$categoryId'
-    | '/react/hooks'
+    | '/categories/$categorySlug'
     | '/categories'
-    | '/categories/articles'
+    | '/article/frontend/react/hooks'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/categories/$categoryId'
-    | '/react/hooks'
+    | '/categories/$categorySlug'
     | '/categories'
-    | '/categories/articles'
+    | '/article/frontend/react/hooks'
   id:
     | '__root__'
     | '/'
-    | '/categories/$categoryId'
-    | '/react/hooks'
+    | '/categories/$categorySlug'
     | '/categories/'
-    | '/categories/articles/'
+    | '/article/frontend/react/hooks'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CategoriesCategoryIdRoute: typeof CategoriesCategoryIdRoute
-  ReactHooksRoute: typeof ReactHooksRoute
+  CategoriesCategorySlugRoute: typeof CategoriesCategorySlugRoute
   CategoriesIndexRoute: typeof CategoriesIndexRoute
-  CategoriesArticlesIndexRoute: typeof CategoriesArticlesIndexRoute
+  ArticleFrontendReactHooksRoute: typeof ArticleFrontendReactHooksRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CategoriesCategoryIdRoute: CategoriesCategoryIdRoute,
-  ReactHooksRoute: ReactHooksRoute,
+  CategoriesCategorySlugRoute: CategoriesCategorySlugRoute,
   CategoriesIndexRoute: CategoriesIndexRoute,
-  CategoriesArticlesIndexRoute: CategoriesArticlesIndexRoute,
+  ArticleFrontendReactHooksRoute: ArticleFrontendReactHooksRoute,
 }
 
 export const routeTree = rootRoute
@@ -170,26 +148,22 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/categories/$categoryId",
-        "/react/hooks",
+        "/categories/$categorySlug",
         "/categories/",
-        "/categories/articles/"
+        "/article/frontend/react/hooks"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/categories/$categoryId": {
-      "filePath": "categories/$categoryId.tsx"
-    },
-    "/react/hooks": {
-      "filePath": "react/hooks.tsx"
+    "/categories/$categorySlug": {
+      "filePath": "categories/$categorySlug.tsx"
     },
     "/categories/": {
       "filePath": "categories/index.tsx"
     },
-    "/categories/articles/": {
-      "filePath": "categories/articles/index.tsx"
+    "/article/frontend/react/hooks": {
+      "filePath": "article/frontend/react/hooks.tsx"
     }
   }
 }

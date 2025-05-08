@@ -4,13 +4,14 @@ export const allPosts = {
   frontend: [
     {
       id: 1,
-      title: "Introducción a Next.js 15: Nuevas características y mejoras",
+      title: "Hooks React",
       slug: "introduccion-nextjs-15",
       excerpt:
-        "Descubre las nuevas características y mejoras que trae Next.js 15, incluyendo mejoras en el App Router, Server Components y más.",
-      date: "Mayo 5, 2024",
+        "Permiten que los componentes de la función tengan acceso al estado y otras características de React.",
+      date: "Enero 3, 2025",
       image: imgReact,
-      tags: ["Next.js", "React"],
+      tags: ["Hooks", "React"],
+      url: "/frontend/react/hooks",
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ export const allPosts = {
       date: "Mayo 3, 2024",
       image: imgReact,
       tags: ["Autenticación", "Next.js"],
+      url: "",
     },
     {
       id: 3,
@@ -31,6 +33,7 @@ export const allPosts = {
       date: "Mayo 1, 2024",
       image: imgReact,
       tags: ["TypeScript", "JavaScript"],
+      url: "",
     },
     {
       id: 4,
@@ -41,26 +44,7 @@ export const allPosts = {
       date: "Abril 28, 2024",
       image: imgReact,
       tags: ["React", "Rendimiento"],
-    },
-    {
-      id: 5,
-      title: "Introducción a Tailwind CSS: Diseño rápido y eficiente",
-      slug: "introduccion-tailwind-css",
-      excerpt:
-        "Descubre cómo Tailwind CSS puede ayudarte a diseñar interfaces de usuario de forma rápida y eficiente sin escribir CSS personalizado.",
-      date: "Abril 25, 2024",
-      image: imgReact,
-      tags: ["CSS", "Tailwind"],
-    },
-    {
-      id: 6,
-      title: "Creando APIs RESTful con Node.js y Express",
-      slug: "apis-restful-nodejs-express",
-      excerpt:
-        "Aprende a crear APIs RESTful robustas y escalables utilizando Node.js y Express para tus aplicaciones web.",
-      date: "Abril 22, 2024",
-      image: imgReact,
-      tags: ["Node.js", "Express", "API"],
+      url: "",
     },
   ],
   movil: [
@@ -73,6 +57,7 @@ export const allPosts = {
       date: "Mayo 1, 2024",
       image: imgReact,
       tags: ["React Native", "Desarrollo Móvil"],
+      url: "",
     },
   ],
 };

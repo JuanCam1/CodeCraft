@@ -25,9 +25,9 @@ function RouteComponent() {
           {categories.map((category) => (
             <Link
               key={category.id}
-              to="/categories/$categoryId"
+              to="/categories/$categorySlug"
               params={{
-                categoryId: category.slug,
+                categorySlug: category.slug,
               }}
             >
               <Card className="overflow-hidden h-full transform transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg">

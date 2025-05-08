@@ -19,13 +19,15 @@ import {
 } from "@/components/ui/select";
 import { allPosts, categories } from "@/data/data";
 
-export const Route = createFileRoute("/categories/$categoryId")({
+export const Route = createFileRoute("/categories/$categorySlug")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const { categoryId } = Route.useParams();
-  const category = categories.find((category) => category.slug === categoryId);
+  const { categorySlug } = Route.useParams();
+  const category = categories.find(
+    (category) => category.slug === categorySlug,
+  );
   console.log(category);
 
   if (!category) {
@@ -60,23 +62,22 @@ function RouteComponent() {
       <section className="mb-12">
         <div className="inline-flex items-center gap-2">
           <div className="rounded-full bg-primary/10 p-2">
-            <Code className="h-6 w-6 text-blue-600" />
+            <Code className="h-6 w-6 text-blue-600 dark:text-blue-500" />
           </div>
-          <h2 className="text-3xl font-bold text-blue-600">{category.name}</h2>
+          <h2 className="text-4xl font-bold text-blue-600 dark:text-blue-500">
+            {category.name}
+          </h2>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-          <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4" />
-            <span className="font-medium">Filtrar por:</span>
-          </div>
+        <div className="flex items-center justify-end gap-2 mb-6">
+          <Filter className="h-4 w-4" />
 
           <Select defaultValue="todos">
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filtrar por etiqueta" />
+              <SelectValue placeholder="Filtrar" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="todos">Todas las etiquetas</SelectItem>
+              <SelectItem value="todos">Todas</SelectItem>
               <SelectItem value="react">React</SelectItem>
               <SelectItem value="nextjs">Next.js</SelectItem>
               <SelectItem value="javascript">JavaScript</SelectItem>
@@ -88,41 +89,44 @@ function RouteComponent() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {posts.length > 0 ? (
             posts.map((post) => (
-              <Card key={post.id} className="overflow-hidden">
-                <div className="aspect-video w-full overflow-hidden">
-                  <img
-                    src={post.image || "/placeholder.svg"}
-                    alt={post.title}
-                    className="object-cover w-full h-full transition-transform hover:scale-105"
-                  />
-                </div>
-                <CardHeader>
-                  <div className="flex gap-2 mb-2">
-                    {post.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
+              <Link
+                key={post.id}
+                to={post.url}
+                params={{
+                  categorySlug: post.slug,
+                }}
+                className="text-sm font-medium"
+              >
+                <Card className="overflow-hidden h-full transform transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg">
+                  <div className="aspect-video w-full overflow-hidden">
+                    <img
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      className="object-cover w-full h-full "
+                    />
                   </div>
-                  <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <div className="text-sm text-muted-foreground">
-                    {post.date}
-                  </div>
-                  <Link
-                    to="/categories/articles"
-                    className="text-sm font-medium"
-                  >
-                    Leer más
-                  </Link>
-                </CardFooter>
-              </Card>
+                  <CardHeader>
+                    <div className="flex gap-2 mb-2">
+                      {post.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <CardTitle className="line-clamp-2">{post.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground line-clamp-3 text-start">
+                      {post.excerpt}
+                    </p>
+                  </CardContent>
+                  <CardFooter className="flex justify-between">
+                    <div className="text-sm text-muted-foreground">
+                      {post.date}
+                    </div>
+                  </CardFooter>
+                </Card>
+              </Link>
             ))
           ) : (
             <div className="container py-12 text-center">
