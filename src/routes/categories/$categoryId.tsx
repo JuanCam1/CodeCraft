@@ -30,7 +30,7 @@ function RouteComponent() {
 
   if (!category) {
     return (
-      <div className="container py-12 text-center">
+      <div className="lg:w-[1200px] py-6 text-center">
         <h1 className="text-3xl font-bold mb-4">Categoría no encontrada</h1>
         <p className="text-muted-foreground mb-8">
           La categoría que buscas no existe.
@@ -46,27 +46,23 @@ function RouteComponent() {
   console.log(posts);
 
   return (
-    <main className="container py-8">
+    <main className="lg:w-[1200px] py-6 text-center">
       <div className="flex items-center gap-2 mb-8">
-        <Button variant="outline" size="sm" asChild>
-          <Link to="/categories">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Todas las categorías
-          </Link>
-        </Button>
+        <Link
+          to="/categories"
+          className="relative flex items-center after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full "
+        >
+          <ArrowLeft className="h-4 w-4 mr-2 " />
+          Categorías
+        </Link>
       </div>
 
       <section className="mb-12">
-        <div className="flex flex-col gap-2 mb-8">
-          <div className="inline-flex items-center gap-2">
-            <div className="rounded-full bg-primary/10 p-2">
-              <Code className="h-6 w-6" />
-            </div>
-            <h1 className="text-3xl font-bold">{category.name}</h1>
+        <div className="inline-flex items-center gap-2">
+          <div className="rounded-full bg-primary/10 p-2">
+            <Code className="h-6 w-6 text-blue-600" />
           </div>
-          <p className="text-muted-foreground max-w-3xl">
-            {category.description}
-          </p>
+          <h2 className="text-3xl font-bold text-blue-600">{category.name}</h2>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
