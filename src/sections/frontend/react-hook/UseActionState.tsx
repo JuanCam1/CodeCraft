@@ -31,15 +31,17 @@ export default function App() {
   return (
     <>
       <AddToCartForm itemID="1" itemTitle="JavaScript: The Definitive Guide" />
-      <AddToCartForm itemID="2" itemTitle="JavaScript: The Good Parts" />
     </>
   )
 }
 `;
 const HookUseActionState = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useActionState" />
+    <div className="text-left mt-5 w-full">
+      <TypographyH2
+        text="useActionState"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useActionState es un hook que le permite actualizar el estado según el
         resultado de una acción de formulario.

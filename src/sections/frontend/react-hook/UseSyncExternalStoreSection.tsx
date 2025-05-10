@@ -53,8 +53,11 @@ export default function TodosApp() {
 
 const HookUseSyncExternalStoreSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useSyncExternalStore" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useSyncExternalStore"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="mt-4 dark:text-gray-400">
         useSyncExternalStore es un Hook de React que te permite suscribirte a
         una fuente de almacenamiento de datos (store) externa.

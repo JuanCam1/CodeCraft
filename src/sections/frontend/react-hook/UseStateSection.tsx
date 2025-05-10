@@ -22,9 +22,12 @@ const ContadorState : FC = () => {
 
 const HookUseStateSection = () => {
   return (
-    <div>
-      <TypographyH2 text="useState" />
-      <TypographyP className="my-4">
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useState"
+        className="text-blue-600 dark:text-blue-500"
+      />
+      <TypographyP className="my-4 text-left">
         useState se utiliza para manejar y mantener el estado local en un
         componente funcional. Permite a los desarrolladores declarar variables
         de estado y actualizarlas a medida que cambia la lógica del componente.

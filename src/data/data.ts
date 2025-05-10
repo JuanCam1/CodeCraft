@@ -11,7 +11,7 @@ export const allPosts = {
       date: "Enero 3, 2025",
       image: imgReact,
       tags: ["Hooks", "React"],
-      url: "/frontend/react/hooks",
+      url: "/article/frontend/react/hooks",
     },
     {
       id: 2,

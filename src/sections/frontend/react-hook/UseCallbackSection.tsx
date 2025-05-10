@@ -12,8 +12,11 @@ const handleSubmit = useCallback((orderDetails) => {
 `;
 const HookUseCallbackSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useCallback" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useCallback"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4">
         useCallback en React se utiliza para memorizar funciones, asegurando que
         una función nueva no se cree en cada renderizado del componente. Esto es

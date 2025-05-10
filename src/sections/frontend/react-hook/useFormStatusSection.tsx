@@ -23,8 +23,11 @@ export default function App() {
 
 const HookUseFormStatusSection = () => {
   return (
-    <div>
-      <TypographyH2 text="useFormStatus" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useFormStatus"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4">
         useFormStatus es un Hook que brinda información de estado del último
         formulario enviado.

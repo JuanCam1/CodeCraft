@@ -9,7 +9,7 @@ export const Route = createFileRoute("/categories/")({
 
 function RouteComponent() {
   return (
-    <main className="lg:w-[1200px]  py-8">
+    <main className="lg:w-[900px]   py-8">
       <div className="mx-auto flex max-w-[980px] flex-col items-center gap-4 text-center mb-6">
         <h1 className="text-blue-600 dark:text-blue-500 text-2xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
           Categorías

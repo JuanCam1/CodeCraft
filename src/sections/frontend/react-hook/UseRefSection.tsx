@@ -25,8 +25,11 @@ const RefExample : FC = () => {
 
 const HookUseRefSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useRef" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useRef"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useRef en React se utiliza para crear una referencia mutable que puede
         almacenar un valor y persistirlo entre renderizados sin causar una

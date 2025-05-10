@@ -19,8 +19,11 @@ function AppContainer() {
 
 const HookUseOptimisticSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useOptimistic" />
+    <div className="text-left mt-5 w-full">
+      <TypographyH2
+        text="useOptimistic"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4">
         useOptimistic es un Hook de React que te permite actualizar la interfaz
         de usuario / UI de manera optimista.

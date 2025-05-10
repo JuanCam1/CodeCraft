@@ -32,8 +32,11 @@ export default FetchUseEffect;
 
 const HookUseEffectSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useEffect" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useEffect"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="mt-4">
         Los Efectos permiten a un componente conectarse y sincronizarse con
         sistemas externos. Esto incluye lidiar con la red, el DOM del navegador,

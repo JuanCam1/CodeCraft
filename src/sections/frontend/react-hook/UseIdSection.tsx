@@ -24,8 +24,8 @@ function PasswordField() {
 }`;
 const HookUseIdSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useId" />
+    <div className="text-left mt-5">
+      <TypographyH2 text="useId" className="text-blue-600 dark:text-blue-500" />
       <TypographyP className="my-4 dark:text-gray-400">
         useId es un Hook de React que permite generar un identificador único
         para cada elemento dentro de un componente. Es especialmente útil para

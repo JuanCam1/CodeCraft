@@ -37,8 +37,11 @@ export default Memofilter;
 
 const HookUseMemoSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useMemo" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useMemo"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4">
         useMemo en React se utiliza para memorizar y optimizar cálculos costosos
         o repetitivos, evitando que se recalculen en cada renderizado del

@@ -13,8 +13,11 @@ function useOnlineStatus() {
 }`;
 const HookUseDebugValueSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useDebugValue" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useDebugValue"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useDebugValue es un Hook de React que te permite añadir una etiqueta a
         un Hook personalizado en las herramientas de desarrollo de React.

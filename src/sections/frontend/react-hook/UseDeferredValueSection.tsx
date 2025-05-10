@@ -43,8 +43,11 @@ export default function App() {
 
 const HookUseDeferredValueSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useDeferredValue" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useDeferredValue"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 text-gray-400">
         useDeferredValue es un Hook de React que permite realizar una
         actualización en diferido de una parte de la UI.

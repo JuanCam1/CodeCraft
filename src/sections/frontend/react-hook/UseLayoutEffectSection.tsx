@@ -17,8 +17,11 @@ function Tooltip() {
 
 const HookUseLayoutEffectSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useLayoutEffect" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useLayoutEffect"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useLayoutEffect es una versión de useEffect que se acciona antes que el
         navegador vuelva a pintar la pantalla.

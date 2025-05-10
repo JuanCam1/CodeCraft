@@ -47,8 +47,11 @@ export default App;
 
 const HookUseContextSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useContext" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useContext"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useContext en React se utiliza para acceder a valores proporcionados por
         un contexto. Simplifica la forma en que los datos se comparten entre

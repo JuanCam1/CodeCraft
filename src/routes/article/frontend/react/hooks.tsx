@@ -25,43 +25,53 @@ export const Route = createFileRoute("/article/frontend/react/hooks")({
 
 function RouteComponent() {
   return (
-    <>
-      <TypographyH2 text="React Hooks" className="text-3xl text-center" />
-      <div className="flex justify-center items-center">
-        <div className="w-[50%] h-[300px] overflow-hidden">
+    <main className="lg:w-[900px] max-md:px-5 py-4">
+      <div className="flex flex-col items-center gap-4 text-center ">
+        <TypographyH2
+          text="React Hooks"
+          className="text-5xl text-center text-blue-600 dark:text-blue-500"
+        />
+        <div className="w-full h-[500px] rounnded-md overflow-hidden bg-red-400">
           <img
             src={reactHook}
-            className="rounded-md w-full object-cover"
+            className="w-full object-cover"
             alt="React Hooks"
           />
         </div>
-      </div>
-      <div>
-        <TypographyH2 text="¿Qué son los hooks?" />
-        <TypographyP className="mt-4">
-          Los hooks en React son funciones especiales que permiten "enganchar"
-          (hook into) las características de React, como el estado y el ciclo de
-          vida, dentro de componentes funcionales. Antes de los hooks, estas
-          características solo estaban disponibles en los componentes de clase.
-        </TypographyP>
-      </div>
-      <HookUseStateSection />
-      <HookUseEffectSection />
-      <HookUseFormStatusSection />
-      <HookUseActionState />
-      <HookUseOptimisticSection />
-      <HookUseMemoSection />
-      <HookUseCallbackSection />
-      <HookUseRefSection />
-      <HookUseContextSection />
-      <HookUseIdSection />
-      <HookUseReducerSection />
-      <HookUseDeferredValueSection />
-      <HookUseDebugValueSection />
-      <HookUseTransicitionSection />
-      <HookUseLayoutEffectSection />
-      <HookUseSyncExternalStoreSection />
-      {/* <div className="flex flex-col">
+        <div>
+          <TypographyH2
+            text="¿Qué son los hooks?"
+            className="text-blue-600 dark:text-blue-500 mt-6 text-4xl"
+          />
+          <TypographyP className="mt-4 text-justify">
+            Los hooks de React son una característica introducida en React 16.8
+            que permiten usar el estado, el ciclo de vida, y otras
+            funcionalidades de React dentro de componentes funcionales, que
+            antes eran más limitados comparados con los componentes de clase.
+            Antes de los hooks, si querías manejar estado o realizar efectos
+            secundarios (como llamadas a una API o suscribirte a eventos),
+            tenías que usar un componente de clase. Con los hooks, ahora puedes
+            escribir componentes más concisos, reutilizables y fáciles de
+            mantener usando solo funciones.
+          </TypographyP>
+        </div>
+        <HookUseStateSection />
+        <HookUseEffectSection />
+        <HookUseFormStatusSection />
+        <HookUseActionState />
+        <HookUseOptimisticSection />
+        <HookUseMemoSection />
+        <HookUseCallbackSection />
+        <HookUseRefSection />
+        <HookUseContextSection />
+        <HookUseIdSection />
+        <HookUseReducerSection />
+        <HookUseDeferredValueSection />
+        <HookUseDebugValueSection />
+        <HookUseTransicitionSection />
+        <HookUseLayoutEffectSection />
+        <HookUseSyncExternalStoreSection />
+        {/* <div className="flex flex-col">
         <TypographyH3 text="Referencias" className="text-xl" />
         <Link to="https://bluuweb.dev/05-react/04-useEffect.html">
           <SpanBlue text="bluuweb" />
@@ -70,7 +80,8 @@ function RouteComponent() {
           <SpanBlue text="react" />
         </Link>
       </div> */}
-      <span className="text-gray-400 text-xs">03 Enero 2024</span>
-    </>
+        <span className="text-gray-400 text-xs">03 Enero 2024</span>
+      </div>
+    </main>
   );
 }

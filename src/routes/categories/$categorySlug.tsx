@@ -1,15 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, Code, Filter } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -32,7 +25,7 @@ function RouteComponent() {
 
   if (!category) {
     return (
-      <div className="lg:w-[1200px] py-6 text-center">
+      <div className="lg:w-[900px]  py-6 text-center">
         <h1 className="text-3xl font-bold mb-4">Categoría no encontrada</h1>
         <p className="text-muted-foreground mb-8">
           La categoría que buscas no existe.
@@ -48,7 +41,7 @@ function RouteComponent() {
   console.log(posts);
 
   return (
-    <main className="lg:w-[1200px] py-6 text-center">
+    <main className="lg:w-[900px] max-md:px-5 py-4 text-center">
       <div className="flex items-center gap-2 mb-8">
         <Link
           to="/categories"
@@ -59,7 +52,7 @@ function RouteComponent() {
         </Link>
       </div>
 
-      <section className="mb-12">
+      <section className="mb-4">
         <div className="inline-flex items-center gap-2">
           <div className="rounded-full bg-primary/10 p-2">
             <Code className="h-6 w-6 text-blue-600 dark:text-blue-500" />
@@ -86,18 +79,15 @@ function RouteComponent() {
           </Select>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-3">
           {posts.length > 0 ? (
             posts.map((post) => (
               <Link
                 key={post.id}
-                to={post.url}
-                params={{
-                  categorySlug: post.slug,
-                }}
+                to="/article/frontend/react/hooks"
                 className="text-sm font-medium"
               >
-                <Card className="overflow-hidden h-full transform transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg">
+                <Card className="overflow-hidden h-full transform transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg pb-6 relative">
                   <div className="aspect-video w-full overflow-hidden">
                     <img
                       src={post.image || "/placeholder.svg"}
@@ -106,13 +96,6 @@ function RouteComponent() {
                     />
                   </div>
                   <CardHeader>
-                    <div className="flex gap-2 mb-2">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
                     <CardTitle className="line-clamp-2">{post.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -120,11 +103,9 @@ function RouteComponent() {
                       {post.excerpt}
                     </p>
                   </CardContent>
-                  <CardFooter className="flex justify-between">
-                    <div className="text-sm text-muted-foreground">
-                      {post.date}
-                    </div>
-                  </CardFooter>
+                  <span className="text-[10px] text-muted-foreground absolute bottom-1 left-6">
+                    {post.date}
+                  </span>
                 </Card>
               </Link>
             ))

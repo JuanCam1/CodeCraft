@@ -64,8 +64,11 @@ function Todos() {
 
 const HookuseReducerSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useReducer" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useReducer"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useReducer es un hook de React que se utiliza para manejar estados
         complejos o lógicos con múltiples actualizaciones en función de acciones

@@ -53,8 +53,11 @@ export default App;
 
 const HookUseTransicitionSection = () => {
   return (
-    <div className="mt-6">
-      <TypographyH2 text="useTransition" />
+    <div className="text-left mt-5">
+      <TypographyH2
+        text="useTransition"
+        className="text-blue-600 dark:text-blue-500"
+      />
       <TypographyP className="my-4 dark:text-gray-400">
         useTransition es un hook que permite retrasar la renderización de un
         componente hasta que se cumplan ciertas condiciones. Esto es útil para
