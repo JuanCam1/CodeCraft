@@ -45,7 +45,7 @@ function RouteComponent() {
       <div className="flex items-center gap-2 mb-8">
         <Link
           to="/categories"
-          className="relative flex items-center after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full "
+          className="pr-2 pb-2 relative flex items-center after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full "
         >
           <ArrowLeft className="h-4 w-4 mr-2 " />
           Categorías

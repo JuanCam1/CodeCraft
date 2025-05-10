@@ -1,5 +1,32 @@
 import imgReact from "../assets/images/hooks.webp";
 
+export const categories = [
+  {
+    id: 1,
+    name: "Desarrollo Frontend",
+    slug: "frontend",
+    description: "Frontend, Frameworks y más",
+  },
+  {
+    id: 2,
+    name: "Desarrollo Móvil",
+    slug: "movil",
+    description: "React Native, Flutter, Swift y más",
+  },
+  {
+    id: 3,
+    name: "Desarrollo De Escritorio",
+    slug: "escritorio",
+    description: "Electron, NW.js y más",
+  },
+  {
+    id: 4,
+    name: "Desarrollo Backend",
+    slug: "backend",
+    description: "Node.js, Express y más",
+  },
+];
+
 export const allPosts = {
   frontend: [
     {
@@ -61,29 +88,3 @@ export const allPosts = {
     },
   ],
 };
-export const categories = [
-  {
-    id: 1,
-    name: "Desarrollo Frontend",
-    slug: "frontend",
-    description: "Frontend, Frameworks y más",
-  },
-  {
-    id: 2,
-    name: "Desarrollo Móvil",
-    slug: "movil",
-    description: "React Native, Flutter, Swift y más",
-  },
-  {
-    id: 3,
-    name: "Desarrollo De Escritorio",
-    slug: "escritorio",
-    description: "Electron, NW.js y más",
-  },
-  {
-    id: 4,
-    name: "Desarrollo Backend",
-    slug: "backend",
-    description: "Node.js, Express y más",
-  },
-];
